@@ -1,0 +1,142 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/welcome-3.html"
+  },
+  "logoInfo": {
+    "title": "网上办公自动化",
+    "image": "images/logonuc.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "首页",
+          "href": "page/welcome-3.html",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+        {
+          "title": "用户管理",
+          "href": "",
+          "icon": "fa fa-group",
+          "target": "_self",
+          "child": [
+          {
+            "title": "修改密码",
+            "href": "page/user-password.html",
+            "icon": "fa fa-plus-square-o",
+            "target": "_self"
+          }, {
+            "title": "基本资料",
+            "href": "page/user-setting.html",
+            "icon": "fa fa-search",
+            "target": "_self"
+          }
+        ]
+        },
+        {
+          "title": "考勤管理",
+          "href": "",
+          "icon": "fa fa-institution",
+          "target": "_self",
+          "child": [
+            {
+              "title": "上下班打卡",
+              "href": "checkmanagement/check.html",
+              "icon": "fa fa-plus-square-o",
+              "target": "_self"
+            }, {
+              "title": "查看打卡记录",
+              "href": "checkmanagement/chakan.html",
+              "icon": "fa fa-plus-circle",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "文件管理",
+          "href": "",
+          "icon": "fa fa-male",
+          "target": "_self",
+          "child": [
+            {
+              "title": "文件上传",
+              "href": "documentmanagement/uploadd.html",
+              "icon": "fa fa-plus-circle",
+              "target": "_self"
+            },
+			{
+			  "title": "文件下载",
+			  "href": "documentmanagement/load.html",
+			  "icon": "fa fa-plus-circle",
+			  "target": "_self"
+			}
+          ]
+        },
+        {
+          "title": "任务管理",
+          "href": "",
+          "icon": "fa fa-trophy",
+          "target": "_self",
+          "child": [
+            {
+              "title": "创建与更新任务",
+              "href": "missionmanagement/mission.html",
+              "icon": "fa fa-plus-square-o",
+              "target": "_self"
+            }, {
+              "title": "查询任务信息",
+              "href": "missionmanagement/misstab.html",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "通知公告管理",
+          "href": "",
+          "icon": "fa fa-paw",
+          "target": "_self",
+          "child": [
+            {
+              "title": "创建通知",
+              "href": "noticemanagement/notice.html",
+              "icon": "fa fa-plus-circle",
+              "target": "_self"
+            }, {
+              "title": "查看通知",
+              "href": "noticemanagement/checknotice.html",
+              "icon": "fa fa-search-plus",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "审批管理",
+          "href": "",
+          "icon": "fa fa-eye",
+          "target": "_self",
+          "child": [
+            {
+              "title": "请假申请",
+              "href": "approvalmanagement/qingjia.html",
+              "icon": "fa fa-plus-square-o",
+              "target": "_self"
+            }, {
+              "title": "查看申请",
+              "href": "approvalmanagement/cksq.html",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

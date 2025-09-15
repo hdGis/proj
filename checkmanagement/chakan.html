@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+  <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="../css/public.css" media="all">
+</head>
+<body>
+<p>查看打卡记录</p>
+<br>
+<div class="layui-form">
+  <div class="layui-form-item">
+    <div class="layui-input-group">
+      <div class="layui-input-split layui-input-prefix">
+        用户名
+      </div>
+      <input type="text" placeholder="请输入姓名" class="layui-input">
+    </div>
+  </div>
+</div>
+<div class="layui-form">
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-1" placeholder="">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择日期</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-2" placeholder="">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择月份</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-3" placeholder="">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择时间</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-4" placeholder="">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择范围</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-5" placeholder=" ~ ">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">请选择范围</label>
+      <div class="layui-input-inline">
+        <input type="text" class="layui-input" id="ID-laydate-format-6" placeholder="开始 到 结束">
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+layui.use(function(){
+  var laydate = layui.laydate;
+  // 自定义格式
+  laydate.render({
+    elem: '#ID-laydate-format-1',
+    format: 'yyyy年MM月dd日'
+  });
+  laydate.render({
+    elem: '#ID-laydate-format-2',
+    format: 'dd/MM/yyyy'
+  });
+  laydate.render({
+    elem: '#ID-laydate-format-3',
+    format: 'yyyyMMdd'
+  });
+  laydate.render({
+    elem: '#ID-laydate-format-4',
+    type: 'time',
+    format: 'H点m分'
+  });
+  laydate.render({
+    elem: '#ID-laydate-format-5',
+    type: 'month',
+    range: '~',
+    format: 'yyyy-MM'
+  });
+  laydate.render({
+    elem: '#ID-laydate-format-6',
+    type: 'datetime',
+    range: '到',
+    format: 'yyyy年M月d日H时m分s秒'
+  });
+});
+</script>
+<button type="button" class="layui-btn">搜索查看</button>
+<table class="layui-table" lay-even>
+  <colgroup>
+    <col width="150">
+    <col width="150">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>员工</th>
+      <th>时间</th>
+      <th>上班打卡情况</th>
+	  <th>时间</th>
+	  <th>下班打卡情况</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td>良子</td>
+      <td>2025-09-10-10:01:49</td>
+      <td>上班已打卡(成功)</td>
+	  <td>2025-09-10-19:01:49</td>
+	  <td>下班已打卡（成功）</td>
+    </tr>
+    <tr>
+      <td>京武</td>
+      <td>2025-09-10-10:01:49</td>
+      <td>上班已打卡</td>
+      <td></td>
+      <td>下班未打卡（未成功）</td>
+    </tr>
+    <tr>
+     <td>王扁</td>
+     <td>2025-09-10-10:01:49</td>
+     <td>上班已打卡（成功）</td>
+     <td>2025-09-10-19:01:49</td>
+     <td>下班已打卡（成功）</td>
+    </tr>
+  </tbody>
+</table>
+<script src="../lib/layui-v2.6.3/layui.js"></script>
+</body>
+</html>

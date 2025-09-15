@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+  <link rel="stylesheet" href="../lib/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="../css/public.css" media="all">
+</head>
+<body>
+<p>上下班打卡（上班打卡时间：8：00-8：30，下班打卡时间：19：00-19：30）</p>
+<br>
+<button type="button" class="layui-btn layui-btn-warm">上班打卡</button>
+<br>
+<br>
+ <button type="button" class="layui-btn layui-btn-normal">下班打卡</button>
+<table class="layui-table" lay-even>
+  <colgroup>
+    <col width="150">
+    <col width="150">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>员工</th>
+      <th>时间</th>
+      <th>上班打卡情况</th>
+	  <th>时间</th>
+	  <th>下班打卡情况</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td>良子</td>
+      <td>2025-09-10-08:01:49</td>
+      <td>上班已打卡</td>
+	  <td>2025-09-10-19:01:49</td>
+	  <td>下班已打卡</td>
+    </tr>
+    <tr>
+      <td>京武</td>
+      <td>2025-09-10-08:01:49</td>
+      <td>上班已打卡</td>
+      <td></td>
+      <td>下班未打卡</td>
+    </tr>
+    <tr>
+     <td>王扁</td>
+     <td>2025-09-10-08:01:49</td>
+     <td>上班已打卡</td>
+     <td>2025-09-10-19:01:49</td>
+     <td>下班已打卡</td>
+    </tr>
+  </tbody>
+</table>
+<script src="../lib/layui-v2.6.3/layui.js"></script>
+<script>
+layui.use(['layer', 'jquery'], function(){
+  var layer = layui.layer;
+  var $ = layui.jquery;
+
+  // 上班打卡按钮点击事件
+  $('.layui-btn-warm').on('click', function(){
+    var nowTime = new Date().format('yyyy-MM-dd hh:mm:ss'); // 格式化当前时间
+    layer.msg('上班打卡成功！时间：' + nowTime, {icon: 1});
+    // 若需自动更新当前用户的打卡记录，可在此处添加表格数据修改逻辑
+  });
+
+  // 下班打卡按钮点击事件
+  $('.layui-btn-normal').on('click', function(){
+    var nowTime = new Date().format('yyyy-MM-dd hh:mm:ss');
+    layer.msg('下班打卡成功！时间：' + nowTime, {icon: 1});
+  });
+
+  // 时间格式化函数
+  Date.prototype.format = function(fmt) {
+    var o = {
+      "M+": this.getMonth() + 1, // 月份
+      "d+": this.getDate(),      // 日
+      "h+": this.getHours(),     // 小时
+      "m+": this.getMinutes(),   // 分
+      "s+": this.getSeconds()    // 秒
+    };
+    if(/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for(var k in o)
+      if(new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+  };
+});
+</script>
+</body>
+</html>
